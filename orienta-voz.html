@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Orienta</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap">
+<style>
+:root{--bg1:#3B406F;--bg2:#1E2248;--gold:#F5B82E;--ink:#2B2F5A;--blue:#2450A8;--ring:#2F4FA0;--fg:#fff;
+color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*,*::before,*::after{box-sizing:inherit}
+html,body{min-height:100%;margin:0}
+body{background:linear-gradient(180deg,var(--bg1),var(--bg2)) fixed;color:var(--fg);font-family:"Atkinson Hyperlegible",Verdana,Arial,sans-serif;display:flex;justify-content:center}
+main{width:100%;max-width:520px;padding:1.25rem 1.1rem 1.5rem;display:flex;flex-direction:column;align-items:center;text-align:center;gap:.9rem}
+h1{margin:.25rem 0 0;font-size:clamp(3rem,15vw,4.5rem);line-height:1;font-weight:700}
+.sub{margin:0;font-size:clamp(1.2rem,5vw,1.5rem);color:#E6EAFB}
+#talk{background:none;border:0;padding:0;margin:.4rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem;cursor:pointer;font-family:inherit;width:100%}
+#talk svg{width:min(72vw,330px);height:auto}
+.pill{background:var(--gold);color:#23264A;font-weight:700;font-size:clamp(1.6rem,7vw,2.1rem);padding:.7rem 1.6rem;border-radius:999px;width:100%;max-width:440px}
+#talk[aria-pressed="true"] .pill{background:#fff}
+#talk[aria-pressed="true"] circle.disc{fill:#fff}
+.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:.7rem;width:100%}
+.tile{background:var(--blue);color:#fff;border:0;border-radius:1.1rem;padding:1rem .4rem;min-height:9rem;font:700 clamp(1.05rem,4.4vw,1.4rem)/1.2 "Atkinson Hyperlegible",Verdana,Arial,sans-serif;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.6rem;cursor:pointer}
+.tile svg{width:2.6rem;height:2.6rem}
+#out{width:100%;background:rgba(255,255,255,.1);border-left:.4rem solid var(--gold);border-radius:.6rem;padding:.8rem 1rem;font-size:1.2rem;text-align:left;min-height:4.5rem}
+.cfg{background:none;border:2px solid #8FA6E0;color:#fff;border-radius:.6rem;padding:.6rem 1rem;font:inherit;font-size:1rem;cursor:pointer}
+#cfg{width:100%;text-align:left;display:flex;flex-direction:column;gap:.5rem}
+#cfg[hidden]{display:none}
+#cfg input{font:inherit;padding:.7rem;border-radius:.5rem;border:2px solid #8FA6E0;background:#1E2248;color:#fff}
+#cfg button{font:inherit;font-weight:700;padding:.7rem;border-radius:.5rem;border:0;background:#F5B82E;color:#23264A;cursor:pointer}
+button:focus-visible{outline:4px solid #fff;outline-offset:4px}
+@media (prefers-reduced-motion:no-preference){.pill{transition:background .15s}}
+</style>
+</head>
+<body>
+<main>
+<h1>Orienta</h1>
+<p class="sub">¿En qué puedo ayudarte?</p>
+<button id="talk" aria-pressed="false" aria-label="Pulsa para hablar">
+<svg viewBox="0 0 200 200" aria-hidden="true">
+<circle cx="100" cy="100" r="97" fill="none" stroke="#2F4FA0" stroke-width="3"/>
+<circle class="disc" cx="100" cy="100" r="91" fill="#F5B82E"/>
+<g fill="none" stroke="#2B2F5A" stroke-width="8" stroke-linecap="round">
+<path d="M64 92v8a36 36 0 0 0 72 0v-8"/><path d="M100 136v24M80 160h40"/>
+<path d="M50 80a36 36 0 0 0 0 40"/><path d="M34 70a52 52 0 0 0 0 60"/>
+<path d="M150 80a36 36 0 0 1 0 40"/><path d="M166 70a52 52 0 0 1 0 60"/></g>
+<rect x="82" y="40" width="36" height="76" rx="18" fill="#2B2F5A"/>
+</svg>
+<span class="pill" id="pilltxt">Pulsa para hablar</span>
+</button>
+<div class="tiles">
+<button class="tile" data-q="dónde estoy"><svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>¿Dónde estoy?</button>
+<button class="tile" data-q="buscar un lugar"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><circle cx="10" cy="10" r="6.5"/><path d="M15 15l6 6"/></svg>Buscar un lugar</button>
+<button class="tile" data-q="reconocer entorno"><svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M9 3 7.2 5H4a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-3.2L15 3H9zm3 14.5A4.5 4.5 0 1 1 12 8.5a4.5 4.5 0 0 1 0 9zm0-2a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"/></svg>Reconocer entorno</button>
+</div>
+<div id="out" role="status" aria-live="polite">Toca el botón y habla. Por ejemplo: «¿dónde estoy?»</div>
+<button id="cfgbtn" class="cfg">Configurar IA</button>
+<div id="cfg" hidden>
+<label for="key">Clave de la IA (solo se guarda en este teléfono)</label>
+<input id="key" type="password" autocomplete="off" placeholder="AIza...">
+<button id="savekey">Guardar clave</button>
+</div>
+</main>
+<script>
+(function(){
+var talk=document.getElementById("talk"),pill=document.getElementById("pilltxt"),out=document.getElementById("out");
+var last="",heading=null;
+var SR=window.SpeechRecognition||window.webkitSpeechRecognition;
+var synth=window.speechSynthesis;
+function say(t){
+  last=t;out.textContent=t;
+  if(!synth)return;
+  try{synth.cancel();var u=new SpeechSynthesisUtterance(t);u.lang="es-CL";u.rate=.95;synth.speak(u);}catch(e){}
+}
+function unlock(){try{if(synth){var u=new SpeechSynthesisUtterance(" ");u.volume=0;synth.speak(u);}}catch(e){}}
+function norm(s){return s.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"");}
+function onHeading(e){
+  if(typeof e.webkitCompassHeading==="number")heading=e.webkitCompassHeading;
+  else if(e.alpha!=null)heading=(360-e.alpha)%360;
+}
+function startCompass(){
+  try{
+    if(window.DeviceOrientationEvent&&typeof DeviceOrientationEvent.requestPermission==="function"){
+      DeviceOrientationEvent.requestPermission().then(function(r){if(r==="granted")window.addEventListener("deviceorientation",onHeading,true);}).catch(function(){});
+    }else{
+      window.addEventListener("deviceorientationabsolute",onHeading,true);
+      window.addEventListener("deviceorientation",onHeading,true);
+    }
+  }catch(e){}
+}
+function cardinal(d){return["norte","noreste","este","sureste","sur","suroeste","oeste","noroeste"][Math.round(d/45)%8];}
+function place(){
+  if(!navigator.geolocation){say("Este teléfono no permite conocer la ubicación.");return;}
+  say("Buscando tu ubicación. Un momento.");
+  navigator.geolocation.getCurrentPosition(function(p){
+    var la=p.coords.latitude,lo=p.coords.longitude,ac=Math.round(p.coords.accuracy);
+    var f=function(v,a,b){return Math.abs(v).toFixed(4).replace(".", " coma ")+" grados "+(v>=0?a:b);};
+    say("Estás en latitud "+f(la,"norte","sur")+", longitud "+f(lo,"este","oeste")+". Precisión de unos "+ac+" metros.");
+  },function(){say("No pude obtener tu ubicación. Revisa que el permiso de ubicación esté activado.");},{enableHighAccuracy:true,timeout:15000,maximumAge:10000});
+}
+function answer(q){
+  var s=norm(q);
+  if(!s.trim()){say("No te escuché. Toca el botón y vuelve a intentarlo.");return;}
+  if(/donde estoy|ubicacion|perdid|posicion/.test(s))return place();
+  if(/^buscar un lugar$/.test(s))return say("La búsqueda de lugares cercanos estará en la versión completa. Podrás decir, por ejemplo: farmacia, baño o paradero.");
+  if(/^reconocer entorno$/.test(s))return say("Reconocer entorno estará en la versión completa. Usará la cámara para describirte lo que hay a tu alrededor.");
+  if(/hacia donde|brujula|orientacion|norte|que direccion/.test(s)){
+    startCompass();
+    setTimeout(function(){
+      if(heading==null)say("No pude leer la brújula. Gira un poco el teléfono y pregunta de nuevo.");
+      else say("Estás mirando hacia el "+cardinal(heading)+", unos "+Math.round(heading)+" grados.");
+    },700);return;
+  }
+  if(/\bhora\b/.test(s))return say("Son las "+new Date().toLocaleTimeString("es-CL",{hour:"numeric",minute:"2-digit"})+".");
+  if(/fecha|dia es hoy|que dia/.test(s))return say("Hoy es "+new Date().toLocaleDateString("es-CL",{weekday:"long",day:"numeric",month:"long"})+".");
+  if(/repite|repetir|otra vez/.test(s))return say(last||"Aún no tengo nada que repetir.");
+  if(/silencio|callate|detener|basta/.test(s)){if(synth)synth.cancel();out.textContent="Silencio.";return;}
+  if(/^ayuda$|que puedes hacer/.test(s))return say("Puedes preguntarme lo que quieras. También: dónde estoy, hacia dónde miro, qué hora es, qué día es hoy, o repite. Para callarme, di silencio.");
+  askAI(q);
+}
+var KEY_NAME="orienta_key",hist=[];
+var SYS="Eres Orienta, un asistente por voz para personas ciegas o con baja visión. Responde siempre en español, con frases cortas y claras, máximo 3 oraciones, sin listas, sin símbolos y sin formato. No puedes ver el entorno del usuario ni garantizar su seguridad al caminar o cruzar calles: si algo es urgente o riesgoso, sugiere pedir ayuda a una persona cercana o llamar a emergencias.";
+function getKey(){try{return localStorage.getItem(KEY_NAME)||"";}catch(e){return "";}}
+function askAI(q){
+  var key=getKey();
+  if(!key){say("Para responder preguntas necesito la inteligencia artificial. Una persona de confianza debe poner la clave en el botón Configurar IA.");return;}
+  say("Pensando.");
+  hist.push({role:"user",parts:[{text:q}]});
+  if(hist.length>7)hist=hist.slice(-7);
+  fetch("https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-lite-latest:generateContent",{method:"POST",headers:{"content-type":"application/json","x-goog-api-key":key},body:JSON.stringify({systemInstruction:{parts:[{text:SYS}]},contents:hist,generationConfig:{maxOutputTokens:300}})})
+  .then(function(r){if(r.status===400||r.status===401||r.status===403)throw new Error("clave");if(r.status===429)throw new Error("limite");if(!r.ok)throw new Error("http");return r.json();})
+  .then(function(d){var p=(d.candidates&&d.candidates[0]&&d.candidates[0].content&&d.candidates[0].content.parts)||[];var t=p.map(function(x){return x.text||"";}).join(" ").trim()||"No tengo una respuesta para eso.";hist.push({role:"model",parts:[{text:t}]});say(t);})
+  .catch(function(e){hist.pop();say(e.message==="clave"?"La clave de la inteligencia artificial no es válida. Una persona de confianza debe revisarla.":e.message==="limite"?"Se acabó el límite gratis por ahora. Intenta de nuevo en un minuto.":"No pude conectarme a la inteligencia artificial. Revisa tu internet.");});
+}
+var rec=null,listening=false;
+function listen(){
+  if(!SR){say("Este navegador no permite hablar. Pide a una persona de confianza que te ayude a abrir la app en otro navegador.");return;}
+  if(listening){rec&&rec.stop();return;}
+  if(synth){synth.cancel();unlock();}
+  rec=new SR();rec.lang="es-CL";rec.interimResults=false;rec.maxAlternatives=1;
+  rec.onstart=function(){listening=true;talk.setAttribute("aria-pressed","true");pill.textContent="Escuchando…";};
+  rec.onresult=function(e){answer(e.results[0][0].transcript);};
+  rec.onerror=function(e){
+    if(e.error==="not-allowed"||e.error==="service-not-allowed")say("No puedo usar el micrófono en esta versión de prueba. Pide a una persona de confianza que te ayude a abrir la versión completa.");
+    else if(e.error==="no-speech")say("No te escuché. Toca el botón y habla de nuevo.");
+    else say("Hubo un problema con el micrófono. Intenta otra vez.");
+  };
+  rec.onend=function(){listening=false;talk.setAttribute("aria-pressed","false");pill.textContent="Pulsa para hablar";};
+  try{rec.start();}catch(e){}
+}
+talk.addEventListener("click",listen);
+document.querySelectorAll(".tile").forEach(function(b){b.addEventListener("click",function(){unlock();answer(b.dataset.q);});});
+document.getElementById("cfgbtn").addEventListener("click",function(){var c=document.getElementById("cfg");c.hidden=!c.hidden;});
+document.getElementById("savekey").addEventListener("click",function(){var k=document.getElementById("key"),v=k.value.trim();try{localStorage.setItem(KEY_NAME,v);}catch(e){}k.value="";document.getElementById("cfg").hidden=true;say(v?"Clave guardada. Ya puedes hacerme preguntas.":"Clave borrada.");});
+})();
+</script>
+</body>
+</html>
