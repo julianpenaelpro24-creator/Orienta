@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Orienta</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Orienta">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="theme-color" content="#3B406F">
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap">
+<style>
+:root{--bg1:#3B406F;--bg2:#1E2248;--gold:#F5B82E;--ink:#2B2F5A;--blue:#2450A8;--ring:#2F4FA0;--fg:#fff;
+color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*,*::before,*::after{box-sizing:inherit}
+html,body{min-height:100%;margin:0}
+body{background:linear-gradient(180deg,var(--bg1),var(--bg2)) fixed;color:var(--fg);font-family:"Atkinson Hyperlegible",Verdana,Arial,sans-serif;display:flex;justify-content:center}
+main{width:100%;max-width:520px;padding:1.25rem 1.1rem 1.5rem;display:flex;flex-direction:column;align-items:center;text-align:center;gap:.9rem}
+h1{margin:.25rem 0 0;font-size:clamp(3rem,15vw,4.5rem);line-height:1;font-weight:700}
+.sub{margin:0;font-size:clamp(1.2rem,5vw,1.5rem);color:#E6EAFB}
+#talk{background:none;border:0;padding:0;margin:.4rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem;cursor:pointer;font-family:inherit;width:100%}
+#talk svg{width:min(72vw,330px);height:auto}
+.pill{background:var(--gold);color:#23264A;font-weight:700;font-size:clamp(1.6rem,7vw,2.1rem);padding:.7rem 1.6rem;border-radius:999px;width:100%;max-width:440px}
+#talk[aria-pressed="true"] .pill{background:#fff}
+#talk[aria-pressed="true"] circle.disc{fill:#fff}
+.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:.7rem;width:100%}
+.tile{background:var(--blue);color:#fff;border:0;border-radius:1.1rem;padding:1rem .4rem;min-height:9rem;font:700 clamp(1.05rem,4.4vw,1.4rem)/1.2 "Atkinson Hyperlegible",Verdana,Arial,sans-serif;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.6rem;cursor:pointer}
+.tile svg{width:2.6rem;height:2.6rem}
+#out{width:100%;background:rgba(255,255,255,.1);border-left:.4rem solid var(--gold);border-radius:.6rem;padding:.8rem 1rem;font-size:1.2rem;text-align:left;min-height:4.5rem}
+.cfg{background:none;border:2px solid #8FA6E0;color:#fff;border-radius:.6rem;padding:.6rem 1rem;font:inherit;font-size:1rem;cursor:pointer}
+#cfg{width:100%;text-align:left;display:flex;flex-direction:column;gap:.5rem}
+#cfg[hidden]{display:none}
+#cfg input{font:inherit;padding:.7rem;border-radius:.5rem;border:2px solid #8FA6E0;background:#1E2248;color:#fff}
+#cfg button{font:inherit;font-weight:700;padding:.7rem;border-radius:.5rem;border:0;background:#F5B82E;color:#23264A;cursor:pointer}
+#cam{width:100%;max-width:320px;border-radius:1rem;background:#000}
+.attr{font-size:.85rem;color:#C9D6F5;margin:0}
+button:focus-visible{outline:4px solid #fff;outline-offset:4px}
+@media (prefers-reduced-motion:no-preference){.pill{transition:background .15s}}
+</style>
+</head>
+<body>
+<main>
+<h1>Orienta</h1>
+<p class="sub">¿En qué puedo ayudarte?</p>
+<button id="talk" aria-pressed="false" aria-label="Pulsa para hablar">
+<svg viewBox="0 0 200 200" aria-hidden="true">
+<circle cx="100" cy="100" r="97" fill="none" stroke="#2F4FA0" stroke-width="3"/>
+<circle class="disc" cx="100" cy="100" r="91" fill="#F5B82E"/>
+<g fill="none" stroke="#2B2F5A" stroke-width="8" stroke-linecap="round">
+<path d="M64 92v8a36 36 0 0 0 72 0v-8"/><path d="M100 136v24M80 160h40"/>
+<path d="M50 80a36 36 0 0 0 0 40"/><path d="M34 70a52 52 0 0 0 0 60"/>
+<path d="M150 80a36 36 0 0 1 0 40"/><path d="M166 70a52 52 0 0 1 0 60"/></g>
+<rect x="82" y="40" width="36" height="76" rx="18" fill="#2B2F5A"/>
+</svg>
+<span class="pill" id="pilltxt">Pulsa para hablar</span>
+</button>
+<div class="tiles">
+<button class="tile" data-q="dónde estoy"><svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>¿Dónde estoy?</button>
+<button class="tile" data-q="buscar un lugar"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><circle cx="10" cy="10" r="6.5"/><path d="M15 15l6 6"/></svg>Buscar un lugar</button>
+<button class="tile" data-q="reconocer entorno"><svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M9 3 7.2 5H4a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-3.2L15 3H9zm3 14.5A4.5 4.5 0 1 1 12 8.5a4.5 4.5 0 0 1 0 9zm0-2a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"/></svg>Reconocer entorno</button>
+</div>
+<div id="out" role="status" aria-live="polite">Toca el botón y habla. Por ejemplo: «¿dónde estoy?»</div>
+<video id="cam" playsinline muted hidden aria-hidden="true"></video>
+<button id="cfgbtn" class="cfg">Configurar IA</button>
+<div id="cfg" hidden>
+<label for="key">Clave de la IA (solo se guarda en este teléfono)</label>
+<input id="key" type="password" autocomplete="off" placeholder="AIza...">
+<button id="savekey">Guardar clave</button>
+</div>
+<p class="attr">Datos de lugares: © colaboradores de OpenStreetMap</p>
+</main>
+<script>
+(function(){
+var talk=document.getElementById("talk"),pill=document.getElementById("pilltxt"),out=document.getElementById("out");
+var last="",heading=null;
+var SR=window.SpeechRecognition||window.webkitSpeechRecognition;
+var synth=window.speechSynthesis;
+function say(t){
+  last=t;out.textContent=t;
+  if(!synth)return;
+  try{synth.cancel();var u=new SpeechSynthesisUtterance(t);u.lang="es-CL";u.rate=.95;synth.speak(u);}catch(e){}
+}
+function unlock(){try{if(synth){var u=new SpeechSynthesisUtterance(" ");u.volume=0;synth.speak(u);}}catch(e){}}
+function norm(s){return s.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"");}
+function onHeading(e){
+  if(typeof e.webkitCompassHeading==="number")heading=e.webkitCompassHeading;
+  else if(e.alpha!=null)heading=(360-e.alpha)%360;
+}
+function startCompass(){
+  try{
+    if(window.DeviceOrientationEvent&&typeof DeviceOrientationEvent.requestPermission==="function"){
+      DeviceOrientationEvent.requestPermission().then(function(r){if(r==="granted")window.addEventListener("deviceorientation",onHeading,true);}).catch(function(){});
+    }else{
+      window.addEventListener("deviceorientationabsolute",onHeading,true);
+      window.addEventListener("deviceorientation",onHeading,true);
+    }
+  }catch(e){}
+}
+function cardinal(d){return["norte","noreste","este","sureste","sur","suroeste","oeste","noroeste"][Math.round(d/45)%8];}
+function place(){
+  if(!navigator.geolocation){say("Este teléfono no permite conocer la ubicación.");return;}
+  say("Buscando tu ubicación. Un momento.");
+  navigator.geolocation.getCurrentPosition(function(p){
+    var la=p.coords.latitude,lo=p.coords.longitude,ac=Math.round(p.coords.accuracy);
+    var f=function(v,a,b){return Math.abs(v).toFixed(4).replace(".", " coma ")+" grados "+(v>=0?a:b);};
+    say("Estás en latitud "+f(la,"norte","sur")+", longitud "+f(lo,"este","oeste")+". Precisión de unos "+ac+" metros.");
+  },function(){say("No pude obtener tu ubicación. Revisa que el permiso de ubicación esté activado.");},{enableHighAccuracy:true,timeout:15000,maximumAge:10000});
+}
+function answer(q){
+  var s=norm(q);
+  if(!s.trim()){say("No te escuché. Toca el botón y vuelve a intentarlo.");return;}
+  if(/donde estoy|ubicacion|perdid|posicion/.test(s))return place();
+  var cat=findCat(s);
+  if(cat&&(awaiting||/cerca|donde|busca|hay un|hay una/.test(s))){awaiting=false;return searchPlaces(cat);}
+  if(/buscar un lugar/.test(s)){awaiting=true;return say("Pulsa el botón grande y dime qué lugar buscas. Por ejemplo: farmacia, baño, paradero, supermercado o banco.");}
+  awaiting=false;
+  if(/reconocer|mi entorno|que hay delante|que hay frente|que ves/.test(s))return recognize();
+  if(/hacia donde|brujula|orientacion|norte|que direccion/.test(s)){
+    startCompass();
+    setTimeout(function(){
+      if(heading==null)say("No pude leer la brújula. Gira un poco el teléfono y pregunta de nuevo.");
+      else say("Estás mirando hacia el "+cardinal(heading)+", unos "+Math.round(heading)+" grados.");
+    },700);return;
+  }
+  if(/\bhora\b/.test(s))return say("Son las "+new Date().toLocaleTimeString("es-CL",{hour:"numeric",minute:"2-digit"})+".");
+  if(/fecha|dia es hoy|que dia/.test(s))return say("Hoy es "+new Date().toLocaleDateString("es-CL",{weekday:"long",day:"numeric",month:"long"})+".");
+  if(/repite|repetir|otra vez/.test(s))return say(last||"Aún no tengo nada que repetir.");
+  if(/silencio|callate|detener|basta/.test(s)){if(synth)synth.cancel();out.textContent="Silencio.";return;}
+  if(/^ayuda$|que puedes hacer/.test(s))return say("Puedes preguntarme lo que quieras. También: dónde estoy, hacia dónde miro, qué hora es, qué día es hoy, o repite. Para callarme, di silencio.");
+  askAI(q);
+}
+var KEY_NAME="orienta_key",hist=[];
+var SYS="Eres Orienta, un asistente por voz para personas ciegas o con baja visión. Responde siempre en español, con frases cortas y claras, máximo 3 oraciones, sin listas, sin símbolos y sin formato. No puedes ver el entorno del usuario ni garantizar su seguridad al caminar o cruzar calles: si algo es urgente o riesgoso, sugiere pedir ayuda a una persona cercana o llamar a emergencias.";
+function getKey(){try{return localStorage.getItem(KEY_NAME)||"";}catch(e){return "";}}
+function askAI(q){
+  var key=getKey();
+  if(!key){say("Para responder preguntas necesito la inteligencia artificial. Una persona de confianza debe poner la clave en el botón Configurar IA.");return;}
+  say("Pensando.");
+  hist.push({role:"user",parts:[{text:q}]});
+  if(hist.length>7)hist=hist.slice(-7);
+  fetch("https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-lite-latest:generateContent",{method:"POST",headers:{"content-type":"application/json","x-goog-api-key":key},body:JSON.stringify({systemInstruction:{parts:[{text:SYS}]},contents:hist,generationConfig:{maxOutputTokens:300}})})
+  .then(function(r){if(r.status===400||r.status===401||r.status===403)throw new Error("clave");if(r.status===429)throw new Error("limite");if(!r.ok)throw new Error("http");return r.json();})
+  .then(function(d){var p=(d.candidates&&d.candidates[0]&&d.candidates[0].content&&d.candidates[0].content.parts)||[];var t=p.map(function(x){return x.text||"";}).join(" ").trim()||"No tengo una respuesta para eso.";hist.push({role:"model",parts:[{text:t}]});say(t);})
+  .catch(function(e){hist.pop();say(e.message==="clave"?"La clave de la inteligencia artificial no es válida. Una persona de confianza debe revisarla.":e.message==="limite"?"Se acabó el límite gratis por ahora. Intenta de nuevo en un minuto.":"No pude conectarme a la inteligencia artificial. Revisa tu internet.");});
+}
+function stopCam(st){var v=document.getElementById("cam");try{st.getTracks().forEach(function(t){t.stop();});}catch(e){}v.srcObject=null;v.hidden=true;}
+function recognize(){
+  if(!getKey()){say("Para reconocer el entorno necesito la inteligencia artificial. Una persona de confianza debe poner la clave en el botón Configurar IA.");return;}
+  if(!navigator.mediaDevices||!navigator.mediaDevices.getUserMedia){say("Este navegador no permite usar la cámara.");return;}
+  say("Abriendo la cámara. Apunta el teléfono hacia adelante. Tomaré la foto en unos segundos.");
+  navigator.mediaDevices.getUserMedia({video:{facingMode:{ideal:"environment"}},audio:false}).then(function(st){
+    var v=document.getElementById("cam");v.srcObject=st;v.hidden=false;
+    var pr=v.play();if(pr&&pr.catch)pr.catch(function(){});
+    setTimeout(function(){
+      var w=v.videoWidth,h=v.videoHeight;
+      if(!w){stopCam(st);say("No pude ver la imagen. Intenta de nuevo.");return;}
+      var sc=Math.min(1,768/Math.max(w,h));
+      var c=document.createElement("canvas");c.width=Math.round(w*sc);c.height=Math.round(h*sc);
+      c.getContext("2d").drawImage(v,0,0,c.width,c.height);
+      var b64=c.toDataURL("image/jpeg",0.7).split(",")[1];
+      stopCam(st);
+      describe(b64);
+    },4500);
+  }).catch(function(){say("No pude abrir la cámara. Permite el acceso a la cámara en Safari e intenta de nuevo.");});
+}
+function describe(b64){
+  say("Analizando la imagen.");
+  var p="Describe en español, en máximo 4 oraciones cortas, lo que hay frente a la persona: objetos, personas y posibles obstáculos, indicando su posición (izquierda, centro, derecha) y si están cerca o lejos. No inventes nada. Si la imagen está oscura o borrosa, dilo. Nunca afirmes que es seguro caminar.";
+  fetch("https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-lite-latest:generateContent",{method:"POST",headers:{"content-type":"application/json","x-goog-api-key":getKey()},body:JSON.stringify({systemInstruction:{parts:[{text:SYS}]},contents:[{role:"user",parts:[{text:p},{inline_data:{mime_type:"image/jpeg",data:b64}}]}],generationConfig:{maxOutputTokens:400}})})
+  .then(function(r){if(r.status===400||r.status===401||r.status===403)throw new Error("clave");if(r.status===429)throw new Error("limite");if(!r.ok)throw new Error("http");return r.json();})
+  .then(function(d){var ps=(d.candidates&&d.candidates[0]&&d.candidates[0].content&&d.candidates[0].content.parts)||[];say(ps.map(function(x){return x.text||"";}).join(" ").trim()||"No pude describir la imagen.");})
+  .catch(function(e){say(e.message==="clave"?"La clave de la inteligencia artificial no es válida.":e.message==="limite"?"Se acabó el límite gratis por ahora. Intenta de nuevo en un minuto.":"No pude conectarme a la inteligencia artificial. Revisa tu internet.");});
+}
+var awaiting=false;
+var CATS=[
+ {re:/farmacia|remedio/,n:"farmacias",q:'["amenity"="pharmacy"]'},
+ {re:/bano|servicio higienico|toilet/,n:"baños públicos",q:'["amenity"="toilets"]'},
+ {re:/paradero|parada|\bbus\b|\bmicros?\b/,n:"paraderos de buses",q:'["highway"="bus_stop"]'},
+ {re:/cajero|\batm\b/,n:"cajeros automáticos",q:'["amenity"="atm"]'},
+ {re:/banco/,n:"bancos",q:'["amenity"="bank"]'},
+ {re:/supermercado|minimarket|almacen/,n:"supermercados",q:'["shop"~"supermarket|convenience"]'},
+ {re:/hospital|urgencia|consultorio|cesfam|clinica/,n:"centros de salud",q:'["amenity"~"hospital|clinic|doctors"]'},
+ {re:/restaurante|comer|comida|cafe/,n:"restaurantes",q:'["amenity"~"restaurant|cafe|fast_food"]'},
+ {re:/panaderia/,n:"panaderías",q:'["shop"="bakery"]'},
+ {re:/carabineros|policia/,n:"comisarías",q:'["amenity"="police"]'}
+];
+function findCat(s){for(var i=0;i<CATS.length;i++)if(CATS[i].re.test(s))return CATS[i];return null;}
+function rad(x){return x*Math.PI/180;}
+function dist(a,b,c,d){var R=6371000,dp=rad(c-a),dl=rad(d-b);var x=Math.sin(dp/2)*Math.sin(dp/2)+Math.cos(rad(a))*Math.cos(rad(c))*Math.sin(dl/2)*Math.sin(dl/2);return 2*R*Math.asin(Math.sqrt(x));}
+function bear(a,b,c,d){var y=Math.sin(rad(d-b))*Math.cos(rad(c));var x=Math.cos(rad(a))*Math.sin(rad(c))-Math.sin(rad(a))*Math.cos(rad(c))*Math.cos(rad(d-b));return (Math.atan2(y,x)*180/Math.PI+360)%360;}
+var MIRRORS=["https://overpass-api.de/api/interpreter","https://overpass.kumi.systems/api/interpreter","https://overpass.private.coffee/api/interpreter","https://maps.mail.ru/osm/tools/overpass/api/interpreter"];
+var TERMS={"farmacias":"farmacia","baños públicos":"baño público","paraderos de buses":"parada de bus","cajeros automáticos":"cajero automático","bancos":"banco","supermercados":"supermercado","centros de salud":"hospital","restaurantes":"restaurante","panaderías":"panadería","comisarías":"carabineros"};
+function tmo(ms){var c=window.AbortController?new AbortController():null;var t=setTimeout(function(){if(c)c.abort();},ms);return {sig:c?c.signal:undefined,done:function(){clearTimeout(t);}};}
+function mk(la,lo,y,x,n){return {n:n||"",d:dist(la,lo,y,x),b:bear(la,lo,y,x)};}
+function viaOverpass(url,qq,la,lo){
+  var T=tmo(9000);
+  return fetch(url,{method:"POST",headers:{"content-type":"application/x-www-form-urlencoded"},body:"data="+encodeURIComponent(qq),signal:T.sig})
+  .then(function(r){T.done();if(!r.ok)throw new Error("http");return r.json();})
+  .then(function(d){return (d.elements||[]).map(function(e){var y=e.lat!=null?e.lat:(e.center&&e.center.lat),x=e.lon!=null?e.lon:(e.center&&e.center.lon);return (y==null||x==null)?null:mk(la,lo,y,x,e.tags&&e.tags.name);}).filter(Boolean);});
+}
+function viaNominatim(cat,la,lo){
+  var T=tmo(9000),dy=0.03,dx=0.03/Math.cos(rad(la));
+  var u="https://nominatim.openstreetmap.org/search?format=jsonv2&limit=15&bounded=1&accept-language=es&viewbox="+(lo-dx)+","+(la+dy)+","+(lo+dx)+","+(la-dy)+"&q="+encodeURIComponent(TERMS[cat.n]||cat.n);
+  return fetch(u,{signal:T.sig}).then(function(r){T.done();if(!r.ok)throw new Error("http");return r.json();})
+  .then(function(a){return a.map(function(e){return mk(la,lo,parseFloat(e.lat),parseFloat(e.lon),e.name);});});
+}
+function getPlaces(cat,la,lo){
+  var ar="(around:2000,"+la+","+lo+")";
+  var qq="[out:json][timeout:9];(node"+cat.q+ar+";way"+cat.q+ar+";);out center 60;";
+  var ps=MIRRORS.map(function(u){return viaOverpass(u,qq,la,lo);});
+  ps.push(viaNominatim(cat,la,lo));
+  return new Promise(function(res,rej){
+    var n=ps.length,f=0,empty=false;
+    ps.forEach(function(p){p.then(function(v){if(v.length){res(v);}else{empty=true;if(++f===n)res([]);}},function(){if(++f===n){if(empty)res([]);else rej(new Error("mapa"));}});});
+  }).then(function(L){return L.sort(function(x,y){return x.d-y.d;});});
+}
+function searchPlaces(cat){
+  if(!navigator.geolocation){say("Este teléfono no permite conocer la ubicación.");return;}
+  say("Buscando "+cat.n+" cerca de ti. Un momento.");
+  navigator.geolocation.getCurrentPosition(function(p){
+    var la=p.coords.latitude,lo=p.coords.longitude;
+    var ar="(around:2500,"+la+","+lo+")";
+    var qq="[out:json][timeout:20];(node"+cat.q+ar+";way"+cat.q+ar+";);out center 100;";
+    var wait=setTimeout(function(){say("Sigo buscando, un momento más.");},7000);
+    getPlaces(cat,la,lo).then(function(L){
+      clearTimeout(wait);
+      if(!L.length){say("No encontré "+cat.n+" cerca de ti.");return;}
+      var parts=L.slice(0,3).map(function(x,i){var m=Math.max(10,Math.round(x.d/10)*10);var w=Math.round(x.d/80);return (i===0?"El más cercano":i===1?"Luego":"Y también")+": "+(x.n?x.n+", ":"")+"a "+m+" metros hacia el "+cardinal(x.b)+(w>=2?", unos "+w+" minutos caminando":"")+".";});
+      say((L.length===1?"Encontré 1 opción. ":"Encontré "+L.length+" opciones. ")+parts.join(" "));
+    }).catch(function(){clearTimeout(wait);say("El servicio de mapas no respondió en este momento. Intenta de nuevo en unos segundos.");});
+  },function(){say("No pude obtener tu ubicación. Revisa que el permiso de ubicación esté activado.");},{enableHighAccuracy:true,timeout:15000,maximumAge:10000});
+}
+var rec=null,listening=false;
+function listen(){
+  if(!SR){say("Este navegador no permite hablar. Pide a una persona de confianza que te ayude a abrir la app en otro navegador.");return;}
+  if(listening){rec&&rec.stop();return;}
+  if(synth){synth.cancel();unlock();}
+  rec=new SR();rec.lang="es-CL";rec.interimResults=false;rec.maxAlternatives=1;
+  rec.onstart=function(){listening=true;talk.setAttribute("aria-pressed","true");pill.textContent="Escuchando…";};
+  rec.onresult=function(e){answer(e.results[0][0].transcript);};
+  rec.onerror=function(e){
+    if(e.error==="not-allowed"||e.error==="service-not-allowed")say("No puedo usar el micrófono en esta versión de prueba. Pide a una persona de confianza que te ayude a abrir la versión completa.");
+    else if(e.error==="no-speech")say("No te escuché. Toca el botón y habla de nuevo.");
+    else say("Hubo un problema con el micrófono. Intenta otra vez.");
+  };
+  rec.onend=function(){listening=false;talk.setAttribute("aria-pressed","false");pill.textContent="Pulsa para hablar";};
+  try{rec.start();}catch(e){}
+}
+talk.addEventListener("click",listen);
+document.querySelectorAll(".tile").forEach(function(b){b.addEventListener("click",function(){unlock();answer(b.dataset.q);});});
+document.getElementById("cfgbtn").addEventListener("click",function(){var c=document.getElementById("cfg");c.hidden=!c.hidden;});
+document.getElementById("savekey").addEventListener("click",function(){var k=document.getElementById("key"),v=k.value.trim();try{localStorage.setItem(KEY_NAME,v);}catch(e){}k.value="";document.getElementById("cfg").hidden=true;say(v?"Clave guardada. Ya puedes hacerme preguntas.":"Clave borrada.");});
+})();
+</script>
+</body>
+</html>
